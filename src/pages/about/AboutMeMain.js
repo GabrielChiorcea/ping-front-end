@@ -1,15 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-import CTA from '../../components/CTA';
 import SocialFeed from '../../components/SocialFeed';
-import ContactTwo from '../../components/Contact/ContactTwo';
 import Breadcrumb from '../../components/Breadcrumb';
 
 import aboutImg from '../../assets/img/about/about-1.jpg';
-import aboutImg2 from '../../assets/img/about/about-2.jpg';
-
-import bgImg from '../../assets/img/cta/cta-bg-2.png';
+import Contact from '../contact';
 
 const HomeMain = () => {
   return (
@@ -27,7 +23,7 @@ const HomeMain = () => {
               >
                 <div className="about-5__main-img text-center text-lg-start">
                   <Link to="/about-us">
-                    <img src={aboutImg} alt="" />
+                    <img className='about-5__img' src={aboutImg} alt="" />
                   </Link>
                 </div>
               </div>
@@ -38,7 +34,7 @@ const HomeMain = () => {
                     data-wow-duration=".9s"
                     data-wow-delay=".5s"
                   >
-                    About Me:
+                    Gabriel Chiorcea
                   </h4>
                   <div className="about-5__content">
                     <div
@@ -53,6 +49,9 @@ const HomeMain = () => {
                         solutions that can connect.{' '}
                       </p>
                     </div>
+                    <h6 className="section-title char-anim tpfadeUp">
+                     <i>The technologies I work with</i> 
+                  </h6>
                     <div
                       className="about-5__content-list wow tpfadeUp"
                       data-wow-duration=".9s"
@@ -61,71 +60,39 @@ const HomeMain = () => {
                       <ul>
                         <li>
                           <i className="fal fa-check-circle"></i>
-                          <span>First Name: Boran</span>
+                          <span>React</span>
                         </li>
                         <li>
                           <i className="fal fa-check-circle"></i>
-                          <span>Address: Dubai</span>
+                          <span>Python</span>
                         </li>
                         <li>
                           <i className="fal fa-check-circle"></i>
-                          <span>Age: 24 Years</span>
+                          <span>Bash</span>
                         </li>
                         <li>
                           <i className="fal fa-check-circle"></i>
-                          <span>Nationality: Tunisian</span>
-                        </li>
-                        <li>
-                          <i className="fal fa-check-circle"></i>
-                          <span> Freelance: Available</span>
-                        </li>
-                        <li>
-                          <i className="fal fa-check-circle"></i>
-                          <span>Email: you@mail.com</span>
-                        </li>
+                          <span>Linux</span>
+                        </li>                        
                       </ul>
-                    </div>
-                    <div
-                      className="about-5__button wow tpfadeUp"
-                      data-wow-duration=".9s"
-                      data-wow-delay=".9s"
-                    >
-                      <Link
-                        className="main-btn tp-btn-hover alt-color"
-                        to="/about-us"
-                      >
-                        <span>About More</span>
-                        <b></b>
-                      </Link>
                     </div>
                   </div>
                 </div>
               </div>
+              <div className="social__area social__plr-2 p-relative z-index">
+              <div className="container-fluid">
+                <SocialFeed />
+              </div>
+             </div>
             </div>
           </div>
-        </div>
-      </div>
-
-      <div className="social__area social__plr-2 p-relative z-index">
-        <div className="container-fluid">
-          <SocialFeed />
         </div>
       </div>
 
       <div className="about-details__area about-details__plr">
         <div className="container-fluid">
           <div className="row align-items-center">
-            <div
-              className="col-xl-6 col-lg-6 wow tpfadeLeft"
-              data-wow-duration=".9s"
-              data-wow-delay=".3s"
-            >
-              <div className="about-details__main-img">
-                <Link to="/about-us">
-                  <img src={aboutImg2} alt="" />
-                </Link>
-              </div>
-            </div>
+ 
             <div
               className="col-xl-6 col-lg-6 wow tpfadeRight"
               data-wow-duration=".9s"
@@ -217,10 +184,6 @@ const HomeMain = () => {
           </div>
         </div>
       </div>
-
-      <ContactTwo />
-
-      <CTA ctaBG={bgImg} />
     </main>
   );
 };

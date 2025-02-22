@@ -89,7 +89,7 @@ const Contact = (props) => {
               data-wow-duration="1.1s"
             >
               <a className="main-btn-sm  tp-btn-hover alt-color" href="#">
-                <span>Send Request</span>
+                <span>Send</span>
                 <b></b>
               </a>
             </div>
@@ -108,11 +108,10 @@ const Contact = (props) => {
                   </span>
                 </div>
                 <div className="contact__content">
-                  <h4 className="contact__title-sm">Call This Now</h4>
+                  <h4 className="contact__title-sm">Call Now</h4>
                   <span>
-                    <a href="tel:+025461556695">
-                      +025461556695 <br />
-                      +826542556455
+                    <a href="tel:0771497457">
+                      0771497457
                     </a>
                   </span>
                 </div>
@@ -129,16 +128,15 @@ const Contact = (props) => {
                   </span>
                 </div>
                 <div className="contact__content">
-                  <h4 className="contact__title-sm">Your Message</h4>
+                  <h4 className="contact__title-sm">Email</h4>
                   <span>
-                    <a href="mailto:amar@mail.com">
-                      amar@mail.com <br />
-                      robi@mail.com
+                    <a href="mailto:admin@pingtema.ro">
+                    admin@pingtema.ro
                     </a>
                   </span>
                 </div>
               </div>
-              <div
+              {/* <div
                 className="contact__item d-flex align-items-center wow animate__fadeInUp"
                 data-wow-duration="1.1s"
               >
@@ -158,7 +156,7 @@ const Contact = (props) => {
                     </a>
                   </span>
                 </div>
-              </div>
+              </div> */}
             </div>
           </div>
         </div>

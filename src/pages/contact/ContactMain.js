@@ -1,18 +1,15 @@
 import React from 'react';
-import ContactTwo from '../../components/Contact/ContactTwo';
 import Breadcrumb from '../../components/Breadcrumb';
-import CTA from '../../components/CTA';
 
-import bgImg from '../../assets/img/cta/cta-bg-2.png';
+import Contact from '../../components/Contact';
 
 const ContactMain = () => {
   return (
     <main>
       <Breadcrumb pageTitle="Contact" />
 
-      <ContactTwo />
+      <Contact/>
 
-      <CTA ctaBG={bgImg} />
     </main>
   );
 };

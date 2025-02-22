@@ -1,7 +1,7 @@
 import React from 'react';
 import AboutMain from './AboutMain';
 import Header from '../../components/Header';
-import FooterThree from '../../components/Footer/FooterThree';
+import Footer from '../../components/Footer';
 
 const About = () => {
   return (
@@ -13,7 +13,7 @@ const About = () => {
       <div id="smooth-wrapper">
         <div id="smooth-content">
           <AboutMain />
-          <FooterThree />
+          <Footer/>
         </div>
       </div>
     </>

@@ -27,8 +27,7 @@ const Footer = (props) => {
                 <div className="footer__content">
                   <div className="footer__text">
                     <p>
-                      Our approach to itis unique around know work an we know
-                      doesn’t work verified factors in play.
+                    Simple, Smart IT Solutions That Accelerate Your Business Growth.
                     </p>
                   </div>
                   <div className="footer__number-wrapper d-flex align-items-center">
@@ -39,7 +38,7 @@ const Footer = (props) => {
                     </div>
                     <div className="footer__number-info">
                       <span>Have Any Questions?</span>
-                      <a href="tel:+230045647823">+230-045-647-823</a>
+                      <a href="tel:+40771497457">0771 467 457</a>
                     </div>
                   </div>
                 </div>
@@ -49,30 +48,7 @@ const Footer = (props) => {
               className="col-xxl-3 col-xl-2 col-lg-6 col-md-6 col-sm-5 mb-70 wow animate__fadeInUp"
               data-wow-duration="1.1s"
             >
-              <div className="footer__widget footer-col-2">
-                <h4 className="footer__title">
-                  <Link to="/service">Service</Link>
-                </h4>
-                <div className="footer__menu-list">
-                  <ul>
-                    <li>
-                      <a href="#">Web Design</a>
-                    </li>
-                    <li>
-                      <a href="#">Development</a>
-                    </li>
-                    <li>
-                      <a href="#">WordPress</a>
-                    </li>
-                    <li>
-                      <a href="#">Online Marketing</a>
-                    </li>
-                    <li>
-                      <a href="#">Content</a>
-                    </li>
-                  </ul>
-                </div>
-              </div>
+
             </div>
             <div
               className="col-xxl-3 col-xl-2 col-lg-6 col-md-6 col-sm-5 mb-70 wow animate__fadeInUp"
@@ -85,20 +61,12 @@ const Footer = (props) => {
                 <div className="footer__menu-list">
                   <ul>
                     <li>
-                      <a href="#">Web Design</a>
+                      <a href="#">Privacy and policy</a>
                     </li>
                     <li>
-                      <a href="#">Development</a>
+                      <a href="#">Cookie consent</a>
                     </li>
-                    <li>
-                      <a href="#">WordPress</a>
-                    </li>
-                    <li>
-                      <a href="#">Online Marketing</a>
-                    </li>
-                    <li>
-                      <a href="#">Content</a>
-                    </li>
+
                   </ul>
                 </div>
               </div>
@@ -108,20 +76,6 @@ const Footer = (props) => {
               data-wow-duration="1.1s"
             >
               <div className="footer__widget footer-col-4">
-                <h4 className="footer__title">
-                  <a href="#">Newslatter</a>
-                </h4>
-                <div className="footer__content">
-                  <p>
-                    Our approach to itis unique around know work an we know.
-                  </p>
-                </div>
-                <div className="footer__input">
-                  <form action="#">
-                    <input type="email" placeholder="Your email" />
-                    <button className="subscribe-btn">Subscribe </button>
-                  </form>
-                </div>
                 <div className="footer__social-box">
                   <span>Social Media:</span>
                   <a href="#">
@@ -151,26 +105,7 @@ const Footer = (props) => {
               data-wow-duration="1.1s"
             >
               <div className="copyright__text">
-                <span>Copyright Sorex 2024, All Right Reserved</span>
-              </div>
-            </div>
-            <div
-              className="col-md-6 wow animate__fadeInUp"
-              data-wow-duration="1.1s"
-            >
-              <div className="copyright__item text-start text-md-end">
-                <span>
-                  <a href="#">Home</a>
-                </span>
-                <span>
-                  <a href="#">Cases</a>
-                </span>
-                <span>
-                  <a href="#">About</a>
-                </span>
-                <span>
-                  <a href="#">Privacy & Policy</a>
-                </span>
+                <span>All Right Reserved</span>
               </div>
             </div>
           </div>

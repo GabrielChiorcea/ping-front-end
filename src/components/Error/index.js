@@ -1,7 +1,6 @@
 import { Link } from 'react-router-dom';
 import CTA from '../../components/CTA';
 
-import bgImg from '../../assets/img/cta/cta-bg-2.png';
 import errorImg from '../../assets/img/error/error.jpg';
 
 const ErrorContent = () => {
@@ -50,7 +49,7 @@ const ErrorContent = () => {
               </div>
             </div>
 
-            <CTA ctaBG={bgImg} />
+            <CTA />
           </main>
         </div>
       </div>

@@ -29,18 +29,18 @@ const HomeMain = () => {
               <div className="about-3__item about-3__wrapper-item">
                 <div className="about-3__section-title pb-10">
                   <h4 className="section-blue-subtitle char-anim">
-                    Our About Now
+                    About us.
                   </h4>
                   <h3 className="section-title char-anim">
-                    We Managing Laren About <br />
-                    Agency For <i>Business</i>.
+                  Expert <i>Linux Management</i> & <i>IT Solutions</i>
                   </h3>
                 </div>
                 <div className="about-3__content">
                   <div className="about-3__text pb-7">
                     <p className="char-anim-2">
-                      Business tailored it design, management & support services
-                      business agency elit, sed do eiusmod tempor.{' '}
+                    We specialize in Linux administration, server management, and IT support for businesses looking for secure, optimized, and reliable infrastructure.{' '}
+                    With our expertise, your systems run smoothly, securely, and efficiently, allowing you to focus on your business while we handle the tech.{' '}<br></br>
+                    Let’s optimize your infrastructure today!
                     </p>
                   </div>
                   <div className="about-3__content-list about-3__content-list-2">
@@ -48,17 +48,17 @@ const HomeMain = () => {
                       <li>
                         <i className="fal fa-check-square"></i>
                         <span>
-                          Business sagittis aliquaenim minim veniam leo.
+                        Server setup, maintenance, and security hardening.
                         </span>
                       </li>
                       <li>
                         <i className="fal fa-check-square"></i>
-                        <span>We give management agency service. </span>
+                        <span> Performance optimization & troubleshooting. </span>
                       </li>
                       <li>
-                        <i className="far fa-angle-double-right"></i>
+                        <i className="fal fa-check-square"></i>
                         <span>
-                          Business tailored it design, management & services.{' '}
+                        Backup, monitoring, and disaster recovery solutions.{' '}
                         </span>
                       </li>
                     </ul>

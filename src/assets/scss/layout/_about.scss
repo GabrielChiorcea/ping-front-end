@@ -1191,6 +1191,21 @@
             padding-bottom: 120px;
         }
     }
+
+    &__main-img{
+        width: 350px; /* Setează dimensiunea dorită */
+        height: 350px; /* Trebuie să fie egală cu lățimea pentru a fi rotund */
+        border-radius: 50%; /* Face div-ul rotund */
+        overflow: hidden; /* Ascunde părțile din imagine care depășesc */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    &__img{
+        width: 100%; /* Face ca imaginea să se potrivească în container */
+        height: 100%;
+        object-fit: cover; /* Asigură că imaginea umple complet div-ul */
+    }
     &__text {
         padding-bottom: 10px;
         border-bottom: 1px solid var(--it-border-1);

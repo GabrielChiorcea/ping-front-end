@@ -5,22 +5,22 @@ import CTA from '../../components/CTA';
 
 import bgImg from '../../assets/img/cta/cta-bg-2.png';
 import serviceIconBg1 from '../../assets/img/service/sv-icon-shape-13.png';
-import serviceIconBg2 from '../../assets/img/service/sv-icon-shape-14.png';
-import serviceIconBg3 from '../../assets/img/service/sv-icon-shape-15.png';
-import serviceIconBg4 from '../../assets/img/service/sv-icon-shape-16.png';
-import serviceIconBg5 from '../../assets/img/service/sv-icon-shape-17.png';
-import serviceIconBg6 from '../../assets/img/service/sv-icon-shape-18.png';
-import serviceIconBg7 from '../../assets/img/service/sv-icon-shape-19.png';
-import serviceIconBg8 from '../../assets/img/service/sv-icon-shape-20.png';
-import serviceIconBg9 from '../../assets/img/service/sv-icon-shape-21.png';
-import serviceIconBg10 from '../../assets/img/service/sv-icon-shape-24.png';
-import serviceIconBg11 from '../../assets/img/service/sv-icon-shape-22.png';
-import serviceIconBg12 from '../../assets/img/service/sv-icon-shape-23.png';
+// import serviceIconBg2 from '../../assets/img/service/sv-icon-shape-14.png';
+// import serviceIconBg3 from '../../assets/img/service/sv-icon-shape-15.png';
+// import serviceIconBg4 from '../../assets/img/service/sv-icon-shape-16.png';
+// import serviceIconBg5 from '../../assets/img/service/sv-icon-shape-17.png';
+// import serviceIconBg6 from '../../assets/img/service/sv-icon-shape-18.png';
+// import serviceIconBg7 from '../../assets/img/service/sv-icon-shape-19.png';
+// import serviceIconBg8 from '../../assets/img/service/sv-icon-shape-20.png';
+// import serviceIconBg9 from '../../assets/img/service/sv-icon-shape-21.png';
+// import serviceIconBg10 from '../../assets/img/service/sv-icon-shape-24.png';
+// import serviceIconBg11 from '../../assets/img/service/sv-icon-shape-22.png';
+// import serviceIconBg12 from '../../assets/img/service/sv-icon-shape-23.png';
 
 const ServiceMain = () => {
   return (
     <main>
-      <Breadcrumb pageTitle="Service One" />
+      <Breadcrumb pageTitle="Services" />
 
       <div className="service__area service__plr mt-100 mb-20 p-relative">
         <div className="container-fluid">
@@ -36,13 +36,13 @@ const ServiceMain = () => {
                 titleClass="service__title color-1"
                 descClass="text-white"
                 serviceIcon="fal fa-plug"
-                serviceIconBg={serviceIconBg1}
                 Title="Get Latest Updates"
                 Description="Business building it before the tab providet management, Payroll & Worksite Services full-fledged."
                 btnText="Read More"
               />
             </div>
-            <div
+
+            {/* <div
               className="col-xl-4 col-lg-6 col-md-6 mb-30 wow animate__fadeInUp"
               data-wow-duration=".9s"
               data-wow-delay=".4s"
@@ -229,6 +229,7 @@ const ServiceMain = () => {
                 btnText="Read More"
               />
             </div>
+             */}
           </div>
         </div>
       </div>

@@ -34,7 +34,36 @@ const SocialFeed = (props) => {
           </div>
         </div>
       </div>
+
+
       <div
+        className="col-xxl-3 col-xl-4 col-md-6 col-lg-6 mb-30 d-xl-none d-xxl-block wow animate__fadeInUp"
+        data-wow-duration=".9s"
+        data-wow-delay=".5s"
+      >
+        <div className="social__item social__border-color-1 d-flex justify-content-between align-items-center">
+          <div className="social__content-box d-flex align-items-center">
+            <div className="social__icon">
+              <img src={socialImg1} alt="" />
+            </div>
+            <div className="social__text">
+              <h4 className="social__title">
+                <a href="#">Slack Best</a>
+              </h4>
+              <span>MESSAGING</span>
+            </div>
+          </div>
+          <div className="social__link contact__color-1">
+            <a href="#">
+              <span>
+                <i className="fal fa-arrow-right"></i>
+              </span>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      {/* <div
         className="col-xxl-3 col-xl-4 col-md-6 col-lg-6 mb-30 wow animate__fadeInUp"
         data-wow-duration=".9s"
         data-wow-delay=".7s"
@@ -111,7 +140,8 @@ const SocialFeed = (props) => {
             </a>
           </div>
         </div>
-      </div>
+      </div> */}
+
     </div>
   );
 };

@@ -1,10 +1,11 @@
 import React from 'react';
 import About from './AboutSection';
 import Blog from './BlogSection';
-import CTA from './CtaSection';
+import CTA from '../../components/CTA';
 import Feature from './FeatureSection';
 import Banner from './HomeBanner';
 import Service from './ServiceSection';
+
 
 const HomeMain = () => {
   return (
@@ -32,7 +33,7 @@ const HomeMain = () => {
       <Blog />
 
       <CTA />
-      
+
     </main>
   );
 };

@@ -2,11 +2,9 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
 import MenuItems from './MenuItems';
-import Topbar from './Topbar';
 
 import Logo from '../../assets/img/logo/logo-1.png';
 import offCanvasLogo from '../../assets/img/logo/footer-logo.png';
-import Shape from '../../assets/img/offcanvas/offcanvas-shape-1.jpg';
 
 const Header = (props) => {
   const { headerClass, parentMenu, headerLogo, topbarEnable } = props;
@@ -86,7 +84,6 @@ const Header = (props) => {
 
   return (
     <>
-      {topbarEnable ? <Topbar /> : ''}
 
       <header>
         <div
@@ -121,7 +118,7 @@ const Header = (props) => {
                     className="main-btn-sm d-none d-xl-block tp-btn-hover alt-color"
                     to="/contact"
                   >
-                    <span>Get A Quote</span>
+                    <span>Contact</span>
                     <b></b>
                   </Link>
                   <div className="header__menu-bar">
@@ -144,7 +141,6 @@ const Header = (props) => {
       <div className="it-offcanvas-area">
         <div className={offCanvasOpen ? 'itoffcanvas opened' : 'itoffcanvas'}>
           <div className="it-offcanva-bottom-shape d-none d-xxl-block">
-            <img src={Shape} alt="" />
           </div>
           <div className="itoffcanvas__close-btn">
             <button
@@ -163,8 +159,7 @@ const Header = (props) => {
           </div>
           <div className="itoffcanvas__text">
             <p>
-              Suspendisse interdum consectetur libero id. Fermentum leo vel orci
-              porta non. Euismod viverra nibh cras pulvinar suspen.
+            Simple, Smart IT Solutions That Accelerate Your Business Growth.
             </p>
           </div>
           <div
@@ -190,7 +185,7 @@ const Header = (props) => {
               </div>
               <div className="itoffcanvas__info-address">
                 <span>Email</span>
-                <a href="maito:hello@yourmail.com">hello@yourmail.com</a>
+                <a href="maito:hello@yourmail.com">contact@pingteam.ro</a>
               </div>
             </div>
             <div className="it-info-wrapper mb-20 d-flex align-items-center">
@@ -201,7 +196,7 @@ const Header = (props) => {
               </div>
               <div className="itoffcanvas__info-address">
                 <span>Phone</span>
-                <a href="tel:(00)45611227890">(00) 456 1122 7890</a>
+                <a href="tel:+40771497457">0771 497 457</a>
               </div>
             </div>
             <div className="it-info-wrapper mb-20 d-flex align-items-center">
@@ -212,12 +207,9 @@ const Header = (props) => {
               </div>
               <div className="itoffcanvas__info-address">
                 <span>Location</span>
-                <a
-                  href="htits://www.google.com/maps/@37.4801311,22.8928877,3z"
-                  target="_blank"
-                >
-                  Riverside 255, San Francisco, USA{' '}
-                </a>
+
+                 <span>Romainia</span> 
+                
               </div>
             </div>
           </div>

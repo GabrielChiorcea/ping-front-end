@@ -5,7 +5,6 @@ import MenuItems from './MenuItems';
 
 import Logo from '../../assets/img/logo/logo-2.png';
 import offCanvasLogo from '../../assets/img/logo/footer-logo.png';
-import Shape from '../../assets/img/offcanvas/offcanvas-shape-1.jpg';
 
 const HeaderStyleTwo = (props) => {
   const { headerClass, parentMenu, headerNormalLogo, headerStickyLogo } = props;
@@ -111,7 +110,7 @@ const HeaderStyleTwo = (props) => {
                       to="/contact"
                       className="main-btn-sm tp-btn-hover alt-color-white d-none d-xxl-block"
                     >
-                      <span>Get A Quote</span>
+                      <span>Contact</span>
                       <b></b>
                     </Link>
                   </div>
@@ -125,7 +124,6 @@ const HeaderStyleTwo = (props) => {
       <div className="it-offcanvas-area">
         <div className={offCanvasOpen ? 'itoffcanvas opened' : 'itoffcanvas'}>
           <div className="it-offcanva-bottom-shape d-none d-xxl-block">
-            <img src={Shape} alt="" />
           </div>
           <div className="itoffcanvas__close-btn">
             <button

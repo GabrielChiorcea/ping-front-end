@@ -54,17 +54,6 @@ const MenuItems = (props) => {
         }
       >
         <Link to="/">Home</Link>
-        <a
-          className={
-            home ? 'mean-expand mean-expand mean-clicked' : 'mean-expand'
-          }
-          href="#"
-          onClick={() => {
-            openMobileMenu('home');
-          }}
-        >
-          <i className="fal fa-plus"></i>
-        </a>
       </li>
       <li
         className={
@@ -72,35 +61,13 @@ const MenuItems = (props) => {
         }
       >
         <Link to="/about-us">About</Link>
-        <a
-          className={
-            about ? 'mean-expand mean-expand mean-clicked' : 'mean-expand'
-          }
-          href="#"
-          onClick={() => {
-            openMobileMenu('about');
-          }}
-        >
-          <i className="fal fa-plus"></i>
-        </a>
       </li>
       <li
         className={
           parentMenu === 'service' ? 'has-dropdown active' : 'has-dropdown'
         }
       >
-        <Link to="/service-1">Service</Link>
-        <a
-          className={
-            service ? 'mean-expand mean-expand mean-clicked' : 'mean-expand'
-          }
-          href="#"
-          onClick={() => {
-            openMobileMenu('service');
-          }}
-        >
-          <i className="fal fa-plus"></i>
-        </a>
+        <Link to="/service">Service</Link>
       </li>
       <li
         className={
@@ -108,17 +75,6 @@ const MenuItems = (props) => {
         }
       >
         <Link to="/blog">Blog</Link>
-        <a
-          className={
-            blog ? 'mean-expand mean-expand mean-clicked' : 'mean-expand'
-          }
-          href="#"
-          onClick={() => {
-            openMobileMenu('blog');
-          }}
-        >
-          <i className="fal fa-plus"></i>
-        </a>
       </li>
       <li className={location.pathname === '/contact' ? 'active' : ''}>
         <Link to="/contact">Contact</Link>
