@@ -2,7 +2,7 @@ import React from 'react';
 import SectionTitle from '../../components/SectionTitle';
 import SingleFeature from '../../components/Feature';
 
-import featureImg1 from '../../assets/img/feature/fea-1.png';
+import agile from '../../assets/img/feature/agile.png';
 import featureImg2 from '../../assets/img/feature/fea-2.png';
 import featureImg3 from '../../assets/img/feature/fea-3.png';
 
@@ -26,7 +26,7 @@ const Feature = () => {
           >
             <SingleFeature
               itemClass="feature__item feature__color-1 text-center"
-              Image={featureImg1}
+              Image={agile}
               Title="Agile"
               Description="We embrace agility to adapt quickly to evolving security challenges, ensuring data protection at all times. With automated processes, real-time monitoring, and rapid recovery, we keep your infrastructure secure and scalable for uninterrupted growth."
               btnText="See More"

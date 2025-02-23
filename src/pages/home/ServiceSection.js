@@ -1,15 +1,18 @@
 import React from 'react';
+import { useSelector } from 'react-redux';
 import SectionTitle from '../../components/SectionTitle';
 import SingleService from '../../components/Service';
 
 import shapeImg1 from '../../assets/img/service/sv-shape-1.png';
 import shapeImg2 from '../../assets/img/service/sv-shape-2.png';
 import serviceIconBg from '../../assets/img/service/sv-icon-shape-7.png';
-import serviceIconBg8 from '../../assets/img/service/sv-icon-shape-8.png';
 
 
 const Service = () => {
-  const muie = serviceIconBg + ""
+
+  const services = useSelector((state) => state.data.services )
+
+
   return (
     <div className="service__area service__space service__mlr grey-bg pt-195 pb-70 p-relative">
       <div className="service__shape-1">
@@ -49,7 +52,7 @@ const Service = () => {
                 descClass="text-white"
                 serviceIcon="fal fa-plug"
                 serviceIconBg={serviceIconBg}
-                Title="Get Latest Updates"
+                Title=""
                 Description="Business building it before the tab providet management, Payroll & Worksite Services full-fledged."
                 btnText="Read More"
               />

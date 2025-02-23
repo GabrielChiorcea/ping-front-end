@@ -4,18 +4,9 @@ import { Link } from 'react-router-dom';
 import Breadcrumb from '../../components/Breadcrumb';
 import CTA from '../../components/CTA';
 
-import bgImg from '../../assets/img/cta/cta-bg-2.png';
 import blogImg1 from '../../assets/img/blog/blog-details-10.jpg';
-import blogImg2 from '../../assets/img/blog/blog-details-2.jpg';
-import blogImg3 from '../../assets/img/blog/blog-details-3.jpg';
 
-import postImg1 from '../../assets/img/blog/blog-details-5.jpg';
-import postImg2 from '../../assets/img/blog/blog-details-6.jpg';
-import postImg3 from '../../assets/img/blog/blog-details-7.jpg';
-
-import authorImg1 from '../../assets/img/testimonial/testi-shape-7.png';
-import authorImg2 from '../../assets/img/testimonial/testi-shape-8.png';
-import authorImg3 from '../../assets/img/testimonial/testi-shape-9.png';
+import NewestPost from './NewestPost';
 
 const BlogDetailsMain = () => {
   return (
@@ -52,7 +43,7 @@ const BlogDetailsMain = () => {
                       you can to ensure your sales team is spending.
                     </p>
                   </div>
-                  <div
+                  {/* <div
                     className="postbox__details-img-box d-flex wow animate__fadeInUp"
                     data-wow-duration="1.1s"
                   >
@@ -62,7 +53,7 @@ const BlogDetailsMain = () => {
                     <span className="text-center">
                       <img src={blogImg3} alt="" />
                     </span>
-                  </div>
+                  </div> */}
                   <div
                     className="postbox__details-title-box pb-30 wow animate__fadeInUp"
                     data-wow-duration="1.1s"
@@ -78,17 +69,8 @@ const BlogDetailsMain = () => {
                       lobortis.
                     </p>
                   </div>
-                  <div
-                    className="postbox__details tagcloud mb-50 wow animate__fadeInUp"
-                    data-wow-duration="1.1s"
-                  >
-                    <span>Tags:</span>
-                    <a href="#">Envato</a>
-                    <a href="#">Development</a>
-                    <a href="#">Technology</a>
-                    <a href="#">Wordpress</a>
-                  </div>
-                  <div
+{/* comment */}
+                  {/* <div
                     className="postbox__comment mb-65 wow animate__fadeInUp"
                     data-wow-duration="1.1s"
                   >
@@ -297,117 +279,24 @@ const BlogDetailsMain = () => {
                       </div>
                     </form>
                   </div>
-                </article>
+
+                 */}
+
+
+               </article>
+
               </div>
             </div>
             <div className="col-xxl-4 col-xl-4 col-lg-4">
               <div className="sidebar__wrapper">
+                
                 <div
                   className="sidebar__widget mb-40 wow animate__fadeInUp"
                   data-wow-duration="1.1s"
                 >
-                  <div className="sidebar__widge-title-box">
-                    <h3 className="sidebar__widget-title">Search</h3>
-                  </div>
-                  <div className="sidebar__widget-content">
-                    <div className="sidebar__search">
-                      <form action="#">
-                        <div className="sidebar__search-input-2">
-                          <input
-                            type="text"
-                            placeholder="Search your keyword..."
-                          />
-                          <button type="submit">
-                            <svg
-                              width="18"
-                              height="18"
-                              viewBox="0 0 18 18"
-                              fill="none"
-                              xmlns="http://www.w3.org/2000/svg"
-                            >
-                              <path
-                                d="M8.01371 15.2219C11.9525 15.2219 15.1456 12.0382 15.1456 8.11096C15.1456 4.18368 11.9525 1 8.01371 1C4.07488 1 0.881836 4.18368 0.881836 8.11096C0.881836 12.0382 4.07488 15.2219 8.01371 15.2219Z"
-                                stroke="#5F6168"
-                                strokeWidth="1.5"
-                                strokeLinecap="round"
-                                strokeLinejoin="round"
-                              />
-                              <path
-                                d="M16.9287 16.9996L13.0508 13.1331"
-                                stroke="#5F6168"
-                                strokeWidth="1.5"
-                                strokeLinecap="round"
-                                strokeLinejoin="round"
-                              />
-                            </svg>
-                          </button>
-                        </div>
-                      </form>
-                    </div>
-                  </div>
-                </div>
-                <div
-                  className="sidebar__widget mb-40 wow animate__fadeInUp"
-                  data-wow-duration="1.1s"
-                >
-                  <div className="sidebar__widge-title-box">
-                    <h3 className="sidebar__widget-title">Recent Post</h3>
-                  </div>
-                  <div className="sidebar__widget-content">
-                    <div className="sidebar__post rc__post">
-                      <div className="rc__post mb-20 d-flex">
-                        <div className="rc__post-thumb mr-20">
-                          <Link to="/blog-details">
-                            <img src={postImg1} alt="" />
-                          </Link>
-                        </div>
-                        <div className="rc__post-content">
-                          <h3 className="rc__post-title">
-                            <Link to="/blog-details">
-                              We play chimney pot Chip bonne.
-                            </Link>
-                          </h3>
-                          <div className="rc__meta">
-                            <span>4 March. 2022</span>
-                          </div>
-                        </div>
-                      </div>
-                      <div className="rc__post mb-20 d-flex">
-                        <div className="rc__post-thumb mr-20">
-                          <Link to="/blog-details">
-                            <img src={postImg2} alt="" />
-                          </Link>
-                        </div>
-                        <div className="rc__post-content">
-                          <h3 className="rc__post-title">
-                            <Link to="/blog-details">
-                              We play chimney pot Chip bonne.
-                            </Link>
-                          </h3>
-                          <div className="rc__meta">
-                            <span>4 March. 2022</span>
-                          </div>
-                        </div>
-                      </div>
-                      <div className="rc__post d-flex">
-                        <div className="rc__post-thumb mr-20">
-                          <Link to="/blog-details">
-                            <img src={postImg3} alt="" />
-                          </Link>
-                        </div>
-                        <div className="rc__post-content">
-                          <h3 className="rc__post-title">
-                            <Link to="/blog-details">
-                              We play chimney pot Chip bonne.
-                            </Link>
-                          </h3>
-                          <div className="rc__meta">
-                            <span>4 March. 2022</span>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
+
+              <NewestPost/>
+                   
                 </div>
                 <div
                   className="sidebar__widget mb-40 wow animate__fadeInUp"
@@ -461,31 +350,13 @@ const BlogDetailsMain = () => {
                     </ul>
                   </div>
                 </div>
-                <div
-                  className="sidebar__widget mb-40 wow animate__fadeInUp"
-                  data-wow-duration="1.1s"
-                >
-                  <div className="sidebar__widge-title-box">
-                    <h3 className="sidebar__widget-title">Tag Cloud</h3>
-                  </div>
-                  <div className="sidebar__widget-content">
-                    <div className="tagcloud">
-                      <Link to="#">Envato</Link>
-                      <Link to="#">Development</Link>
-                      <Link to="#">Technology</Link>
-                      <Link to="#">Wordpress</Link>
-                      <Link to="#">PHP</Link>
-                      <Link to="#">Branding</Link>
-                    </div>
-                  </div>
-                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
 
-      <CTA ctaBG={bgImg} />
+      <CTA  />
     </main>
   );
 };

@@ -5,25 +5,25 @@ import { WOW } from 'wowjs';
 
 //Custom Components
 
-import Home from '../pages/home';
-import About from '../pages/about';
-import AboutMe from '../pages/about/about-me';
-import Service from '../pages/service';
-import ServiceDetails from '../pages/service/service-details';
-import Project from '../pages/project';
-import ProjectOne from '../pages/project/project-1';
-import ProjectTwo from '../pages/project/project-2';
-import ProjectMasonary from '../pages/project/project-masonary';
-import ProjectDetails from '../pages/project/project-details';
-import Testimonial from '../pages/testimonial';
-import Error from '../pages/error';
-import Blog from '../pages/blog';
-import BlogDetails from '../pages/blog/blog-details';
-import Contact from '../pages/contact';
+import Home from './pages/home';
+import About from './pages/about';
+import AboutMe from './pages/about/about-me';
+import Service from './pages/service';
+import ServiceDetails from './pages/service/service-details';
+import Project from './pages/project';
+import ProjectOne from './pages/project/project-1';
+import ProjectTwo from './pages/project/project-2';
+import ProjectMasonary from './pages/project/project-masonary';
+import ProjectDetails from './pages/project/project-details';
+import Testimonial from './pages/testimonial';
+import Error from './pages/error';
+import Blog from './pages/blog';
+import BlogDetails from './pages/blog/blog-details';
+import Contact from './pages/contact';
 
-import Preloader from '../components/Preloader';
-import ScrollToTop from '../components/ScrollTop';
-import LoadTop from '../components/ScrollTop/LoadTop';
+import Preloader from './components/Preloader';
+import ScrollToTop from './components/ScrollTop';
+import LoadTop from './components/ScrollTop/LoadTop';
 
 const App = () => {
   const [isLoading, setIsLoading] = useState(true);

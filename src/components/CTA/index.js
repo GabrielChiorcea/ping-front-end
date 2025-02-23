@@ -11,7 +11,7 @@ const CTA = () => {
       data-wow-duration="1.1s"
       style={{ backgroundImage: `url(${ctaBG})` }}
     >
-      <div className="cta__shape-icon d-none d-md-block">
+      <div className="cta__shape-icon d-md-block">
         <img src={ctaIcon} alt="" />
       </div>
       <div className="container">

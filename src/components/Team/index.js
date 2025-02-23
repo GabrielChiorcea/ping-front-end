@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 
-import teamImg from '../../assets/img/team/team-1.jpg';
+import teamImg from '../../assets/img/team/user_placeholder.png';
 
 const SingleTeam = (props) => {
   const { itemClass, Image, Title, Designation } = props;
@@ -22,7 +22,7 @@ const SingleTeam = (props) => {
       </div>
       <div className="team__author-info">
         <h5 className="team__author-name">
-          <Link to="/about-me">{Title ? Title : 'Barasa Perats'}</Link>
+          <Link to="/about-me">{Title ? Title : 'Gabriel Chiorcea'}</Link>
         </h5>
         <span>{Designation ? Designation : 'Founder'}</span>
       </div>

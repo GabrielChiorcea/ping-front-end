@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-import featureImg from '../../assets/img/feature/fea-1.png';
+import featureImg from '../../assets/img/feature/agile.png';
 
 const SingleFeature = (props) => {
   const { itemClass, Title, Description, Image, btnText, btnURL } = props;

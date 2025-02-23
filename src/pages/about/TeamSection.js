@@ -1,14 +1,6 @@
 import React from 'react';
 import SingleTeam from '../../components/Team';
 
-import teamImg1 from '../../assets/img/team/team-1.jpg';
-import teamImg2 from '../../assets/img/team/team-2.jpg';
-import teamImg3 from '../../assets/img/team/team-3.jpg';
-import teamImg4 from '../../assets/img/team/team-4.jpg';
-import teamImg5 from '../../assets/img/team/team-5.jpg';
-import teamImg6 from '../../assets/img/team/team-6.jpg';
-import teamImg7 from '../../assets/img/team/team-7.jpg';
-import teamImg8 from '../../assets/img/team/team-8.jpg';
 
 const Team = () => {
   return (
@@ -41,9 +33,9 @@ const Team = () => {
             data-wow-delay=".5s"
           >
             <SingleTeam
-              Image={teamImg1}
-              Title="Barasa Perats"
-              Designation="Founder"
+              Image=''
+              Title=""
+              Designation=""
             />
           </div>
         </div>
