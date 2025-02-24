@@ -1,25 +1,15 @@
 import React, { useState } from 'react';
-import ModalVideo from 'react-modal-video';
-import { Link } from 'react-router-dom';
 
 import aboutImg from '../../assets/img/about/about-1.png';
 import shapeImg1 from '../../assets/img/about/about-shape-1.png';
 import shapeImg2 from '../../assets/img/about/about-shape-2.png';
+import { useSelector } from 'react-redux';
 
 const About = () => {
-  const [isOpen, setIsOpen] = useState(false);
-  const openModal = () => setIsOpen(!isOpen);
+  const homeData = useSelector((state) => state.data.home);
 
   return (
     <div className="about__area pb-100 p-relative">
-      <ModalVideo
-        channel="youtube"
-        isOpen={isOpen}
-        videoId="PO_fBTkoznc"
-        onClose={() => {
-          openModal();
-        }}
-      />
       <div className="about__shape-1 d-none d-md-block">
         <img src={shapeImg1} alt="" />
       </div>
@@ -43,35 +33,24 @@ const About = () => {
             data-wow-delay=".7s"
           >
             <div className="about__section-box pb-10">
-              <h4 className="section-subtitle char-anim"> About us</h4>
+              <h4 className="section-subtitle char-anim"> {homeData?.data[0]?.aboutPill} </h4>
               <h3 className="section-title char-anim">
-              A Team of Linux Experts Dedicated to Performance, Reliability, and Innovation              </h3>
+              {homeData?.data[0]?.aboutTitle}             
+              </h3>
             </div>
             <div className="about__content">
               <p className="char-anim-2">
-              We are a team of Linux experts committed to delivering high-performance, reliable, and scalable solutions. With deep technical expertise and a passion for innovation, we optimize infrastructure, streamline operations, and ensure seamless system management for businesses of all sizes.{' '}
+              {homeData?.data[0]?.aboutDescription}
               </p>
             </div>
             <div className="about__list-item">
               <ul>
-                <li>
-                  <i className="far fa-check"></i>
-                  <span>Ensuring fast, stable, and efficient systems tailored to your needs.</span>
-                </li>
-
-                <li>
-                  <i className="far fa-check"></i>
-                  <span>Solutions designed to grow and adapt with your business.</span>
-                </li>
-                <li>
-                  <i className="far fa-check"></i>
-                  <span>Proactive management to minimize downtime and maximize uptime.</span>
-                </li>
-                <li>
-                  <i className="far fa-check"></i>
-                  <span>Team with extensive Linux knowledge and hands-on experience.</span>
-                </li>
-
+                {homeData?.data[0]?.aboutStrongPoints.map((item) => (  
+                  <li key={item.id}>
+                    <i className="far fa-check"></i>
+                      <span>{item.aboutPoints}</span>
+                  </li>
+                ))}
               </ul>
             </div>
             <div className="row gx-0">
@@ -83,7 +62,7 @@ const About = () => {
                     </span>
                   </div>
                   <div className="about__contact-number">
-                    <a href="tel:0771497457">0771497457</a>
+                    <a href="tel:">{homeData?.data[0]?.aboutContactnumber}</a>
                   </div>
                 </div>
               </div>

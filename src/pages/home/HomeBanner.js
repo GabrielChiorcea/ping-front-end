@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 
 import sliderImg1 from '../../assets/img/slider/slider-1.png';
 import shapeImg1 from '../../assets/img/slider/shape-1.png';
@@ -15,6 +16,10 @@ import shapeImg10 from '../../assets/img/slider/shape-10.png';
 import shapeImg11 from '../../assets/img/slider/shape-11.png';
 
 const Banner = () => {
+
+  const homeData = useSelector((state) => state.data.home);
+  console.log(homeData);
+
   return (
     <div className="slider__area grey-bg slider__space slider__plr p-relative z-index fix">
       <div
@@ -71,14 +76,14 @@ const Banner = () => {
                 data-wow-duration="1.1s"
                 data-wow-delay=".3s"
               >
-                The Professional Linux Group of Romania
+                {homeData.data[0].bannerPill}
               </h4>
               <h3
                 className="hero-title char-anim wow animate__fadeInUp"
                 data-wow-duration="1.1s"
                 data-wow-delay=".3s"
               >
-                Simple, Smart IT Solutions That Accelerate Your Business Growth
+                {homeData.data[0].bannerTitle}
               </h3>
             </div>
             <div
@@ -87,12 +92,7 @@ const Banner = () => {
               data-wow-delay=".3s"
             >
               <p className="char-anim-2">
-              Elevate your IT environment with expert Linux administration and 
-              custom development solutions—driving innovation, streamlining 
-              operations, and securing your digital infrastructure. Harness 
-              dedicated, tailored support that optimizes performance, enhances 
-              scalability, and empowers your business to thrive in today’s 
-              fast-evolving, competitive digital technological landscape.{' '}
+              {homeData.data[0].bannerDescription}{' '}
               </p>
             </div>
             <div
@@ -101,7 +101,7 @@ const Banner = () => {
               data-wow-delay=".5s"
             >
               <Link to="/about-us" className="main-btn tp-btn-hover alt-color">
-                <span>Get Started</span>
+                <span>About us</span>
                 <b></b>
               </Link>
             </div>

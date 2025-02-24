@@ -1,13 +1,14 @@
 import React from 'react';
+import { useSelector } from 'react-redux';
 
 import SectionTitle from '../../components/SectionTitle';
 import SingleBlog from '../../components/Blog';
 
 import blogImg1 from '../../assets/img/blog/blog-1.jpg';
-import blogImg2 from '../../assets/img/blog/blog-2.jpg';
-import blogImg3 from '../../assets/img/blog/blog-3.jpg';
 
 const Blog = () => {
+  const homeData = useSelector((state) => state.data.home);
+
   return (
     <div className="blog__area blog__mlr blog__space">
       <div className="container-fluid">
@@ -19,8 +20,8 @@ const Blog = () => {
           >
             <SectionTitle
               sectionClass="blog__section-box text-center pb-40 section-title-fixed-width"
-              subTitle="Blog"
-              Title="Latest Insights from Our Blog"
+              subTitle={homeData?.data[0]?.blogPill}
+              Title={homeData?.data[0]?.blogTitle}
             />
           </div>
         </div>

@@ -3,11 +3,9 @@ import HomeMain from './HomeMain';
 import Header from '../../components/Header';
 import Footer from '../../components/Footer';
 
-import useGetData from '../../hooks/useGetData';
 
 const Home = () => {
   
-  useGetData()
   
   return (
     <>

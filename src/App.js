@@ -3,8 +3,7 @@ import { Route, Routes, useLocation } from 'react-router-dom';
 import 'animate.css/animate.min.css';
 import { WOW } from 'wowjs';
 
-//Custom Components
-
+// Custom Components
 import Home from './pages/home';
 import About from './pages/about';
 import AboutMe from './pages/about/about-me';
@@ -24,47 +23,52 @@ import Contact from './pages/contact';
 import Preloader from './components/Preloader';
 import ScrollToTop from './components/ScrollTop';
 import LoadTop from './components/ScrollTop/LoadTop';
+import useGetData from './hooks/useGetData';
 
 const App = () => {
   const [isLoading, setIsLoading] = useState(true);
   const location = useLocation();
 
+  // Apelăm useGetData direct în componentă
+  const dataLoadedHome = useGetData("https://strapi.pingteam.ro/api/Homes?populate=*", "home"); 
+  const dataLoadedServices = useGetData("https://strapi.pingteam.ro/api/services?populate=*", "services");
+
   useEffect(() => {
-    // Simulate data loading delay
-    setTimeout(() => {
+    if (dataLoadedHome && dataLoadedServices) {
       setIsLoading(false);
-    }, 500);
-  }, []);
+    }
+  }, [dataLoadedHome, dataLoadedServices]);
 
   // Initialize wowjs and animate.css
   useEffect(() => {
     new WOW({ live: false, animateClass: 'animate__animated' }).init();
   }, [location]);
 
+  if (isLoading) {
+    return <Preloader />;
+  }
+
   return (
     <div className="App">
-      {isLoading ? <Preloader /> : ''}
-      <>
-        <ScrollToTop />
-        <LoadTop />
-        <Routes>
-          <Route path="/" exact element={<Home />} />
-          <Route path="/about-me" element={<AboutMe />} />
-          <Route path="/about-us" element={<About />} />
-          <Route path="/service" element={<Service />} />
-          <Route path="/service-details" element={<ServiceDetails />} />
-          <Route path="/project" element={<Project />} />
-          <Route path="/project-1" element={<ProjectOne />} />
-          <Route path="/project-2" element={<ProjectTwo />} />
-          <Route path="/project-masonary" element={<ProjectMasonary />} />
-          <Route path="/project-details" element={<ProjectDetails />} />
-          <Route path="/testimonial" element={<Testimonial />} />
-          <Route path="/blog" element={<Blog />} />
-          <Route path="/blog-details" element={<BlogDetails />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="*" element={<Error />} />
-        </Routes>
-      </>
+      <ScrollToTop />
+      <LoadTop />
+      <Routes>
+        <Route path="/" exact element={<Home />} />
+        <Route path="/about-me" element={<AboutMe />} />
+        <Route path="/about-us" element={<About />} />
+        <Route path="/service" element={<Service />} />
+        <Route path="/service-details" element={<ServiceDetails />} />
+        <Route path="/project" element={<Project />} />
+        <Route path="/project-1" element={<ProjectOne />} />
+        <Route path="/project-2" element={<ProjectTwo />} />
+        <Route path="/project-masonary" element={<ProjectMasonary />} />
+        <Route path="/project-details" element={<ProjectDetails />} />
+        <Route path="/testimonial" element={<Testimonial />} />
+        <Route path="/blog" element={<Blog />} />
+        <Route path="/blog-details" element={<BlogDetails />} />
+        <Route path="/contact" element={<Contact />} />
+        <Route path="*" element={<Error />} />
+      </Routes>
     </div>
   );
 };
