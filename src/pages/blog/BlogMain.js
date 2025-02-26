@@ -4,14 +4,16 @@ import { Link } from 'react-router-dom';
 
 import Breadcrumb from '../../components/Breadcrumb';
 import CTA from '../../components/CTA';
-import bgImg from '../../assets/img/cta/cta-bg-2.png';
 import blogImg1 from '../../assets/img/blog/blog-details-2.jpg';
 
 import NewestPost from './NewestPost';
+import { useSelector } from 'react-redux';
 
 const BlogMain = () => {
   const [isOpen, setIsOpen] = useState(false);
   const openModal = () => setIsOpen(!isOpen);
+
+  const blogData = useSelector((state) => state.data.blog);
 
   return (
     <main>
@@ -153,13 +155,20 @@ const BlogMain = () => {
               <div id="blog" className="postbox__wrapper pr-20">
 
                 <article className="postbox__item format-image mb-50 transition-3">
-                  <div
+                  {/* ///////////////////////////////////////////////////////////////// */}
+
+                  
+                  
+                  {blogData?.data.map((blog) => (
+                    <React.Fragment key={blog.id}>
+
+<div
                     className="postbox__thumb w-img wow animate__fadeInUp"
                     data-wow-duration=".9s"
                     data-wow-delay=".3s"
                   >
-                    <Link to="/blog-details">
-                      <img src={blogImg1} alt="" />
+                    <Link to={`/blog-details/${blog.slug}`}>
+                      <img src={`https://strapi.pingteam.ro${blog.blogImage.url}`} alt="" />
                     </Link>
                   </div>
                   <div
@@ -169,26 +178,35 @@ const BlogMain = () => {
                   >
                     <div className="postbox__meta">
                       <span>
-                        <Link to="#">Mris Jonsong</Link>
+                        <Link to="#">{blog.author.firstName}</Link>
                       </span>
                       <span>
-                        <Link to="#">Nov 4, 2022</Link>
+                        <Link to="#">{blog.creatAt}</Link>
                       </span>
                     </div>
                     <h3 className="postbox__title">
-                      <Link to="/blog-details">
-                        Service Construct deals physical damage with his basic
-                        attack in the match.
+                      <Link to={`/blog-details/${blog.slug}`}>
+                        {blog.blogTitle}
                       </Link>
                     </h3>
                     <div className="postbox__text">
                       <p>
-                        There are many variations of passages agency we have
-                        covered many special events such as fireworks, fairs,
-                        parades, races, walks, a Lorem Ipsum Fasts injecte.
+                        {blog.shortDescription}
                       </p>
                     </div>
                   </div>
+
+                      
+
+
+                    </React.Fragment>
+                  ))}
+
+
+
+
+                  {/* ///////////////////////////////////////////////////////////////// */}
+
                 </article>
                 <div
                   className="basic-pagination wow animate__fadeInUp"
@@ -232,7 +250,7 @@ const BlogMain = () => {
         </div>
       </div>
 
-      <CTA ctaBG={bgImg} />
+      <CTA />
     </main>
   );
 };

@@ -11,11 +11,13 @@ const Feature = () => {
   useEffect(() => {
 
     const getImg = async () => {
+      const token = process.env.REACT_APP_TOKEN_KEY;
+      const url = process.env.REACT_APP_API_URL_HOME_FUTURE_IMAGE;
     try {
-      const response = await fetch('https://strapi.pingteam.ro/api/Homes?populate=featureItem.featureItemImg',{
+      const response = await fetch(url,{
         method: 'GET',
         headers: {
-          "Authorization": `Bearer 4b9a64602ccdb433ea68fd5a9dfffa0dff82f40ecf20187dc6fa10d8fc571e7ef759391d48ee040cccd0af57bd68dd851d2098d0e59fd589760cfb961e9037240ceaba96eae727ec2ba4c1d4103bf53da89a52e8cb04914732c605be1aaaac96c6ab2d891428b4188ed320631cbf429ffb0e9c335425f844402a1edd5189c3e1`,
+          "Authorization": `Bearer ${token}`,
           'Content-Type': 'application/json',
         },
       })

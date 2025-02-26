@@ -26,18 +26,22 @@ import LoadTop from './components/ScrollTop/LoadTop';
 import useGetData from './hooks/useGetData';
 
 const App = () => {
+  const home = process.env.REACT_APP_API_URL_HOME;
+  const services = process.env.REACT_APP_API_URL_SERVICES;
+  const blog = process.env.REACT_APP_API_URL_BLOG_POSTS;
   const [isLoading, setIsLoading] = useState(true);
   const location = useLocation();
 
   // Apelăm useGetData direct în componentă
-  const dataLoadedHome = useGetData("https://strapi.pingteam.ro/api/Homes?populate=*", "home"); 
-  const dataLoadedServices = useGetData("https://strapi.pingteam.ro/api/services?populate=*", "services");
+  const dataLoadedHome = useGetData(home, "home"); 
+  const dataLoadedServices = useGetData(services, "services");
+  const dataLoadedBlog = useGetData(blog, "blog");
 
   useEffect(() => {
-    if (dataLoadedHome && dataLoadedServices) {
+    if (dataLoadedHome && dataLoadedServices, dataLoadedBlog) {
       setIsLoading(false);
     }
-  }, [dataLoadedHome, dataLoadedServices]);
+  }, [dataLoadedHome, dataLoadedServices, dataLoadedBlog]);
 
   // Initialize wowjs and animate.css
   useEffect(() => {
@@ -65,7 +69,7 @@ const App = () => {
         <Route path="/project-details" element={<ProjectDetails />} />
         <Route path="/testimonial" element={<Testimonial />} />
         <Route path="/blog" element={<Blog />} />
-        <Route path="/blog-details" element={<BlogDetails />} />
+        <Route path="/blog-details/:slug" element={<BlogDetails />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="*" element={<Error />} />
       </Routes>

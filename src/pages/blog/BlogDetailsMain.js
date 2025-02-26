@@ -1,6 +1,6 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-
+import { Link, useParams } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 import Breadcrumb from '../../components/Breadcrumb';
 import CTA from '../../components/CTA';
 
@@ -9,6 +9,17 @@ import blogImg1 from '../../assets/img/blog/blog-details-10.jpg';
 import NewestPost from './NewestPost';
 
 const BlogDetailsMain = () => {
+  const {slug} = useParams();
+
+  const blogData = useSelector((state) => state.data.blog);
+
+  const blogPost = blogData.data.find((post) => post.slug === slug);
+
+  console.log(blogPost.blogTitle);
+
+  if (!blogPost) {
+    return <div>Blog post not found</div>;
+  }
   return (
     <main>
       <Breadcrumb pageTitle="Blog Details" />

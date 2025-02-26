@@ -8,6 +8,7 @@ import blogImg1 from '../../assets/img/blog/blog-1.jpg';
 
 const Blog = () => {
   const homeData = useSelector((state) => state.data.home);
+  const blogData = useSelector((state) => state.data.blog);
 
   return (
     <div className="blog__area blog__mlr blog__space">
@@ -26,7 +27,7 @@ const Blog = () => {
           </div>
         </div>
         <div className="row">
-          <div
+          {/* <div
             className="col-xl-4 col-lg-6 col-md-6 mb-70 wow animate__fadeInUp"
             data-wow-duration="1.1s"
             data-wow-delay=".5s"
@@ -44,7 +45,31 @@ const Blog = () => {
               publishedDate="Jan,6, 2022"
               btnText="See More"
             />
-          </div>
+          </div> */}
+
+            {blogData?.data.map((blog, index) => (
+              <div
+                key={index}
+                className="col-xl-4 col-lg-6 col-md-6 mb-70 wow animate__fadeInUp"
+                data-wow-duration="1.1s"
+                data-wow-delay=".5s"
+              >
+                <SingleBlog
+                  blogImg={`https://strapi.pingteam.ro${blog.blogImage.url}`}
+                  blogClass="blog__item"
+                  categoryClass="blog__catagory blog__catagory-color-1"
+                  titleClass="blog__title blog__title-color-1"
+                  btnClass="blog__link"
+                  Title={blog.blogTitle}
+                  Description={blog.shortDescription}
+                  blogCategory={blog.category.name}
+                  blogAuthor={blog.author.firstName}  
+                  publishedDate={blog.creatAt}
+                  btnText="See More"
+                />  
+                </div>
+            ))}
+
         </div>
       </div>
     </div>
