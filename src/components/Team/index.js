@@ -1,11 +1,11 @@
-import { Link } from 'react-router-dom';
+import { Link } from "react-router-dom";
 
-import teamImg from '../../assets/img/team/user_placeholder.png';
+import teamImg from "../../assets/img/team/user_placeholder.png";
 
 const SingleTeam = (props) => {
   const { itemClass, Image, Name, Title, Slug, GitHub, LinkedIn } = props;
   return (
-    <div className={itemClass ? itemClass : 'team__item text-center'}>
+    <div className={itemClass ? itemClass : "team__item text-center"}>
       <div className="team__main-thumb">
         <img src={Image ? Image : teamImg} alt={Title} />
         <div className="team__social-box">
@@ -19,9 +19,11 @@ const SingleTeam = (props) => {
       </div>
       <div className="team__author-info">
         <h5 className="team__author-name">
-          <Link to={`/about-me/${Slug}`}>{Name ? Name : 'Gabriel Chiorcea'}</Link>
+          <Link to={`/about-me/${Slug}`}>
+            {Name ? Name : "Gabriel Chiorcea"}
+          </Link>
         </h5>
-        <span>{Title ? Title : 'Founder'}</span>
+        <span>{Title ? Title : "Founder"}</span>
       </div>
     </div>
   );

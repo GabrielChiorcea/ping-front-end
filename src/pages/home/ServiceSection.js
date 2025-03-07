@@ -1,19 +1,16 @@
-import React from 'react';
-import { useSelector } from 'react-redux';
-import SectionTitle from '../../components/SectionTitle';
-import SingleService from '../../components/Service';
-import { Link } from 'react-router-dom';
-import shapeImg1 from '../../assets/img/service/sv-shape-1.png';
-import shapeImg2 from '../../assets/img/service/sv-shape-2.png';
-import serviceIconBg from '../../assets/img/service/sv-icon-shape-7.png';
-
+import React from "react";
+import { useSelector } from "react-redux";
+import SectionTitle from "../../components/SectionTitle";
+import SingleService from "../../components/Service";
+import { Link } from "react-router-dom";
+import shapeImg1 from "../../assets/img/service/sv-shape-1.png";
+import shapeImg2 from "../../assets/img/service/sv-shape-2.png";
+import serviceIconBg from "../../assets/img/service/sv-icon-shape-7.png";
 
 const Service = () => {
-
   const homeData = useSelector((state) => state.data.home);
-  const services = useSelector((state) => state.data.services )
+  const services = useSelector((state) => state.data.services);
   const service = services.data.slice(0, 3);
-
 
   return (
     <div className="service__area service__space service__mlr grey-bg pt-195 pb-70 p-relative">
@@ -40,8 +37,7 @@ const Service = () => {
         {/* Aici porneste grila de servicii */}
 
         <div className="row">
-{/* //////////////////////////////////////////////////////////////////////// */}
-
+          {/* //////////////////////////////////////////////////////////////////////// */}
 
           {service.map((service) => {
             return (
@@ -52,34 +48,32 @@ const Service = () => {
                 data-wow-delay=".3s"
               >
                 <SingleService
-                    itemClass="service__item service__item-bg p-relative fix shape-none"
-                    btnClass="service__link service__link-color-1"
-                    titleClass="service__title color-1"
-                    descClass="text-white
+                  itemClass="service__item service__item-bg p-relative fix shape-none"
+                  btnClass="service__link service__link-color-1"
+                  titleClass="service__title color-1"
+                  descClass="text-white
                     "
-                    serviceIcon="fal fa-plug"
-                    serviceIconBg={serviceIconBg}
-                    Title={service.title}
-                    Description={service.shortDescription}
-                    btnText="Read More"
-                  />
+                  serviceIcon="fal fa-plug"
+                  serviceIconBg={serviceIconBg}
+                  Title={service.title}
+                  Description={service.shortDescription}
+                  btnText="Read More"
+                />
               </div>
-            )
+            );
           })}
 
-                          <div
-                            className="service__section-box text-center pb-35 section-title-fixed-width"
-                            data-wow-duration="1.1s"
-                            data-wow-delay=".5s"
-                          >
-                            <Link to="/service" className="main-btn tp-btn-hover alt-color">
-                              <span>All services</span>
-                              <b></b>
-                            </Link>
-                          </div>
-{/* //////////////////////////////////////////////////////////////////////// */}
-
-
+          <div
+            className="service__section-box text-center pb-35 section-title-fixed-width"
+            data-wow-duration="1.1s"
+            data-wow-delay=".5s"
+          >
+            <Link to="/service" className="main-btn tp-btn-hover alt-color">
+              <span>All services</span>
+              <b></b>
+            </Link>
+          </div>
+          {/* //////////////////////////////////////////////////////////////////////// */}
         </div>
       </div>
     </div>

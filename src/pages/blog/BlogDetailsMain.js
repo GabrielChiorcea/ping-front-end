@@ -1,24 +1,22 @@
-import "github-markdown-css"; 
-import React from 'react';
-import ReactMarkdown from 'react-markdown';
-import remarkGfm from 'remark-gfm';
-import { Link, useParams } from 'react-router-dom';
-import { useSelector } from 'react-redux';
-import Breadcrumb from '../../components/Breadcrumb';
-import CTA from '../../components/CTA';
+import "github-markdown-css";
+import React from "react";
+import ReactMarkdown from "react-markdown";
+import remarkGfm from "remark-gfm";
+import { Link, useParams } from "react-router-dom";
+import { useSelector } from "react-redux";
+import Breadcrumb from "../../components/Breadcrumb";
+import CTA from "../../components/CTA";
 
-import blogImg1 from '../../assets/img/blog/blog-details-10.jpg';
 
-import NewestPost from './NewestPost';
+import NewestPost from "./NewestPost";
 
 const BlogDetailsMain = () => {
-  const {slug} = useParams();
-
+  const { slug } = useParams();
+  const image = process.env.REACT_APP_API_URL_IMAGE;
   const blogData = useSelector((state) => state.data.blog);
   const category = useSelector((state) => state.data.categories);
 
-  const blogPost = blogData.data.find((post) => post.slug  === slug);
-
+  const blogPost = blogData.data.find((post) => post.slug === slug);
 
   if (!blogPost) {
     return <div>Blog post not found</div>;
@@ -38,7 +36,7 @@ const BlogDetailsMain = () => {
                     data-wow-duration="1.1s"
                   >
                     <Link to="/blog-details">
-                      <img src={`https://strapi.pingteam.ro${blogPost.blogImage.url}`} alt="" />
+                      <img src={`${image}${blogPost.blogImage.url}`} alt="" />
                     </Link>
                   </div>
                   <div
@@ -64,10 +62,11 @@ const BlogDetailsMain = () => {
                     className="postbox__details-title-box pb-30 wow animate__fadeInUp markdown-body"
                     data-wow-duration="1.1s"
                   >
-                    <ReactMarkdown remarkPlugins={[remarkGfm]}>{blogPost.blogContent}</ReactMarkdown>
-                    
+                    <ReactMarkdown remarkPlugins={[remarkGfm]}>
+                      {blogPost.blogContent}
+                    </ReactMarkdown>
                   </div>
-{/* comment */}
+                  {/* comment */}
                   {/* <div
                     className="postbox__comment mb-65 wow animate__fadeInUp"
                     data-wow-duration="1.1s"
@@ -279,22 +278,16 @@ const BlogDetailsMain = () => {
                   </div>
 
                  */}
-
-
-               </article>
-
+                </article>
               </div>
             </div>
             <div className="col-xxl-4 col-xl-4 col-lg-4">
               <div className="sidebar__wrapper">
-                
                 <div
                   className="sidebar__widget mb-40 wow animate__fadeInUp"
                   data-wow-duration="1.1s"
                 >
-
-              <NewestPost/>
-                   
+                  <NewestPost />
                 </div>
                 <div
                   className="sidebar__widget mb-40 wow animate__fadeInUp"
@@ -305,16 +298,18 @@ const BlogDetailsMain = () => {
                   </div>
                   <div className="sidebar__widget-content">
                     <ul>
-                    {category.data.map((cat) => (
-                      <li>
-                        <Link to={`/blog/${cat.slug}`}>
-                          <span>
-                            <i className="fal fa-angle-right"></i>{cat.name}
-                          </span>
-                        </Link>
-                      </li>
-                    ))}
-                    </ul> </div>
+                      {category.data.map((cat) => (
+                        <li>
+                          <Link to={`/blog/${cat.slug}`}>
+                            <span>
+                              <i className="fal fa-angle-right"></i>
+                              {cat.name}
+                            </span>
+                          </Link>
+                        </li>
+                      ))}
+                    </ul>{" "}
+                  </div>
                 </div>
               </div>
             </div>
@@ -322,7 +317,7 @@ const BlogDetailsMain = () => {
         </div>
       </div>
 
-      <CTA  />
+      <CTA />
     </main>
   );
 };

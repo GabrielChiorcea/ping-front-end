@@ -52,7 +52,7 @@ const SingleBlog = (props) => {
               titleClass ? titleClass : 'blog__title blog__title-color-1'
             }
           >
-            <Link to={`/blog/${slug}`}>
+            <Link to={`/blog-details/${slug}`}>
               {Title
                 ? Title
                 : 'Devest For Ukraine for This Blog Best Charity On'}

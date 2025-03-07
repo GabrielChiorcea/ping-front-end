@@ -1,11 +1,11 @@
-import React from 'react';
-import SingleService from '../../components/Service';
-import Breadcrumb from '../../components/Breadcrumb';
-import CTA from '../../components/CTA';
+import React from "react";
+import SingleService from "../../components/Service";
+import Breadcrumb from "../../components/Breadcrumb";
+import CTA from "../../components/CTA";
 
-import serviceIconBg from '../../assets/img/service/sv-icon-shape-7.png';
+import serviceIconBg from "../../assets/img/service/sv-icon-shape-7.png";
 
-import { useSelector } from 'react-redux';
+import { useSelector } from "react-redux";
 
 const ServiceMain = () => {
   const services = useSelector((state) => state.data.services);
@@ -39,7 +39,6 @@ const ServiceMain = () => {
                 />
               </div>
             ))}
-
           </div>
         </div>
       </div>

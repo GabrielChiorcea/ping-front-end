@@ -1,22 +1,21 @@
-import "github-markdown-css"; 
-import ReactMarkdown from 'react-markdown';
-import remarkGfm from 'remark-gfm';
+import "github-markdown-css";
+import ReactMarkdown from "react-markdown";
+import remarkGfm from "remark-gfm";
 import {
   Accordion,
   AccordionItem,
   AccordionItemHeading,
   AccordionItemPanel,
   AccordionItemButton,
-} from 'react-accessible-accordion';
-import React from 'react';
-import CTA from '../../components/CTA';
-import Breadcrumb from '../../components/Breadcrumb';
-import { useSelector } from 'react-redux';
-import { useParams } from 'react-router-dom';
-
+} from "react-accessible-accordion";
+import React from "react";
+import CTA from "../../components/CTA";
+import Breadcrumb from "../../components/Breadcrumb";
+import { useSelector } from "react-redux";
+import { useParams } from "react-router-dom";
 
 const ServiceDetailsMain = () => {
-  const {slug} = useParams();
+  const { slug } = useParams();
   const services = useSelector((state) => state.data.services);
   const service = services.data.find((service) => service.slug === slug);
 
@@ -55,10 +54,8 @@ const ServiceDetailsMain = () => {
               <div className="service-details__service-item">
                 <h4>What you get</h4>
                 <ul>
-                {service.serviceStrongPoints.map((point, index) => (
-                    <li key={index}>
-                      {point.serviceStrongPoint}
-                    </li>
+                  {service.serviceStrongPoints.map((point, index) => (
+                    <li key={index}>{point.serviceStrongPoint}</li>
                   ))}
                 </ul>
               </div>
@@ -72,10 +69,12 @@ const ServiceDetailsMain = () => {
                 data-wow-delay=".7s"
               >
                 <div className="service-details__text markdown-body">
-                  <ReactMarkdown remarkPlugins={[remarkGfm]}>{service.content}</ReactMarkdown>
+                  <ReactMarkdown remarkPlugins={[remarkGfm]}>
+                    {service.content}
+                  </ReactMarkdown>
                 </div>
 
-{/* 
+                {/* 
                  <div
                   className="service-details__list wow animate__fadeInUp"
                   data-wow-duration=".9s"
@@ -88,9 +87,6 @@ const ServiceDetailsMain = () => {
                     </li>
                   </ul>
                 </div>  */}
-
-
-
               </div>
             </div>
             <div
@@ -100,7 +96,7 @@ const ServiceDetailsMain = () => {
             >
               <div className="service-details__section-box">
                 <h4 className="section-title">
-                Frequently asked questions about the service
+                  Frequently asked questions about the service
                 </h4>
               </div>
             </div>
@@ -108,27 +104,28 @@ const ServiceDetailsMain = () => {
               className="col-xl-6 col-lg-6 wow animate__fadeInUp"
               data-wow-duration=".9s"
               data-wow-delay=".9s"
-            >
-            </div>
+            ></div>
             <div className="col-xl-12 col-lg-12 mb-30">
-              <div className={'it-custom-accordion'}>
-                <Accordion className="accordion" preExpanded={['a']}>
+              <div className={"it-custom-accordion"}>
+                <Accordion className="accordion" preExpanded={["a"]}>
                   {service.fqa.questionAndAnswer.map((fqa, index) => {
-                    const uuid = index === 0 ? 'a' : `b${index}`;
+                    const uuid = index === 0 ? "a" : `b${index}`;
                     return (
-                      <AccordionItem key={index} className="accordion-items" uuid={uuid}>
+                      <AccordionItem
+                        key={index}
+                        className="accordion-items"
+                        uuid={uuid}
+                      >
                         <AccordionItemHeading>
                           <AccordionItemButton className="accordion-buttons">
                             <span>
                               <i className="fal fa-check"></i>
-                            </span>{' '}
+                            </span>{" "}
                             {fqa.question}
                           </AccordionItemButton>
                         </AccordionItemHeading>
                         <AccordionItemPanel className="accordion-body">
-                          <p>
-                            {fqa.answer}
-                          </p>
+                          <p>{fqa.answer}</p>
                         </AccordionItemPanel>
                       </AccordionItem>
                     );
@@ -140,8 +137,7 @@ const ServiceDetailsMain = () => {
         </div>
       </div>
 
-    <CTA  />
-
+      <CTA />
     </main>
   );
 };

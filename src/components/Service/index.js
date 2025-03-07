@@ -1,8 +1,8 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React from "react";
+import { Link } from "react-router-dom";
 
-import Shape from '../../assets/img/service/sv-item-shape-1.png';
-import Image from '../../assets/img/service/sv-icon-shape-1.png';
+import Shape from "../../assets/img/service/sv-item-shape-1.png";
+import Image from "../../assets/img/service/sv-icon-shape-1.png";
 
 const SingleService = (props) => {
   const {
@@ -23,7 +23,7 @@ const SingleService = (props) => {
       className={
         itemClass
           ? itemClass
-          : 'service__item service__border-1  p-relative fix'
+          : "service__item service__border-1  p-relative fix"
       }
     >
       <div className="service__shape">
@@ -36,30 +36,30 @@ const SingleService = (props) => {
         <div className="service__inner-icon">
           <span>
             <a href="#">
-              <i className={serviceIcon ? serviceIcon : 'fal fa-plug'}></i>
+              <i className={serviceIcon ? serviceIcon : "fal fa-plug"}></i>
             </a>
           </span>
         </div>
       </div>
       <div className="service__content">
         <h4
-          className={titleClass ? titleClass : 'service__title title-color-1'}
+          className={titleClass ? titleClass : "service__title title-color-1"}
         >
-          <Link to={`/${btnURL ? btnURL : 'service-details'}`}>
-            {Title ? Title : 'Get Latest Updates'}{' '}
+          <Link to={`/${btnURL ? btnURL : "service-details"}`}>
+            {Title ? Title : "Get Latest Updates"}{" "}
           </Link>
         </h4>
-        <p className={descClass ? descClass : ''}>
+        <p className={descClass ? descClass : ""}>
           {Description
             ? Description
-            : 'Business building it before the tab providet management, Payroll & Worksite Services full-fledged.'}
+            : "Business building it before the tab providet management, Payroll & Worksite Services full-fledged."}
         </p>
       </div>
       <div
-        className={btnClass ? btnClass : 'service__link service__link-color-1'}
+        className={btnClass ? btnClass : "service__link service__link-color-1"}
       >
-        <Link to={`/${btnURL ? btnURL : 'service-details'}`}>
-          {btnText ? btnText : 'Read More'}
+        <Link to={`/${btnURL ? btnURL : "service-details"}`}>
+          {btnText ? btnText : "Read More"}
           <i className="fal fa-arrow-right"></i>
         </Link>
       </div>

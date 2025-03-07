@@ -5,6 +5,7 @@ import SingleTeam from '../../components/Team';
 
 const Team = () => {
   const teamData = useSelector((state) => state.data.members);
+  const image = process.env.REACT_APP_API_URL_IMAGE;
 
   return (
     <div className="team__area team__space-2 team__plr grey-bg">
@@ -39,7 +40,7 @@ const Team = () => {
             key={member.documentId} 
           >
             <SingleTeam
-              Image={`https://strapi.pingteam.ro${member?.profiePhoto?.url}`}
+              Image={`${image}${member?.profiePhoto?.url}`}
               Name={`${member.firstName} ${member.lastName}`}
               Title={member.shortDescription}
               GitHub={member.gitHub}

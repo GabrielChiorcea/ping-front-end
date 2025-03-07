@@ -1,7 +1,7 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React from "react";
+import { Link } from "react-router-dom";
 
-import featureImg from '../../assets/img/feature/agile.png';
+import featureImg from "../../assets/img/feature/agile.png";
 
 const SingleFeature = (props) => {
   const { itemClass, Title, Description, Image, btnText, btnURL } = props;
@@ -9,7 +9,7 @@ const SingleFeature = (props) => {
   return (
     <div
       className={
-        itemClass ? itemClass : 'feature__item feature__color-3 text-center'
+        itemClass ? itemClass : "feature__item feature__color-3 text-center"
       }
     >
       <div className="feature__icon z-index">
@@ -18,16 +18,16 @@ const SingleFeature = (props) => {
         </span>
       </div>
       <div className="feature__content">
-        <h4 className="feature__title">{Title ? Title : 'Online Marketing'}</h4>
+        <h4 className="feature__title">{Title ? Title : "Online Marketing"}</h4>
         <p>
           {Description
             ? Description
-            : 'Business is the knowledge or master event. Identify the error of the we website coding page speed.'}
+            : "Business is the knowledge or master event. Identify the error of the we website coding page speed."}
         </p>
       </div>
       <div className="feature__link">
-        <Link to={`${btnURL ? btnURL : 'service-details'}`}>
-          {btnText ? btnText : 'See More'}
+        <Link to={`${btnURL ? btnURL : "service-details"}`}>
+          {btnText ? btnText : "See More"}
           <i className="far fa-arrow-right"></i>
         </Link>
       </div>

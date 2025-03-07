@@ -1,22 +1,21 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import { useSelector } from 'react-redux';
+import React from "react";
+import { Link } from "react-router-dom";
+import { useSelector } from "react-redux";
 
-import sliderImg1 from '../../assets/img/slider/slider-1.png';
-import shapeImg1 from '../../assets/img/slider/shape-1.png';
-import shapeImg2 from '../../assets/img/slider/shape-2.png';
-import shapeImg3 from '../../assets/img/slider/shape-3.png';
-import shapeImg4 from '../../assets/img/slider/shape-4.png';
-import shapeImg5 from '../../assets/img/slider/shape-5.png';
-import shapeImg6 from '../../assets/img/slider/shape-6.png';
-import shapeImg7 from '../../assets/img/slider/shape-7.png';
-import shapeImg8 from '../../assets/img/slider/shape-8.png';
-import shapeImg9 from '../../assets/img/slider/shape-9.png';
-import shapeImg10 from '../../assets/img/slider/shape-10.png';
-import shapeImg11 from '../../assets/img/slider/shape-11.png';
+import sliderImg1 from "../../assets/img/slider/slider-1.png";
+import shapeImg1 from "../../assets/img/slider/shape-1.png";
+import shapeImg2 from "../../assets/img/slider/shape-2.png";
+import shapeImg3 from "../../assets/img/slider/shape-3.png";
+import shapeImg4 from "../../assets/img/slider/shape-4.png";
+import shapeImg5 from "../../assets/img/slider/shape-5.png";
+import shapeImg6 from "../../assets/img/slider/shape-6.png";
+import shapeImg7 from "../../assets/img/slider/shape-7.png";
+import shapeImg8 from "../../assets/img/slider/shape-8.png";
+import shapeImg9 from "../../assets/img/slider/shape-9.png";
+import shapeImg10 from "../../assets/img/slider/shape-10.png";
+import shapeImg11 from "../../assets/img/slider/shape-11.png";
 
 const Banner = () => {
-
   const homeData = useSelector((state) => state.data.home);
   console.log(homeData);
 
@@ -92,7 +91,7 @@ const Banner = () => {
               data-wow-delay=".3s"
             >
               <p className="char-anim-2">
-              {homeData.data[0].bannerDescription}{' '}
+                {homeData.data[0].bannerDescription}{" "}
               </p>
             </div>
             <div

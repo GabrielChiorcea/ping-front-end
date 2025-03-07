@@ -1,6 +1,12 @@
-import { useState, useEffect } from 'react';
-import { useDispatch } from 'react-redux';
-import { setServices, setHome, setBlog, setMembers, setCategories } from '../features/update';
+import { useState, useEffect } from "react";
+import { useDispatch } from "react-redux";
+import {
+  setServices,
+  setHome,
+  setBlog,
+  setMembers,
+  setCategories,
+} from "../features/update";
 
 const useGetData = (url, resource) => {
   const [dataLoaded, setDataLoaded] = useState(false);
@@ -13,9 +19,9 @@ const useGetData = (url, resource) => {
         const response = await fetch(url, {
           method: "GET",
           headers: {
-            "Authorization": `Bearer ${token}`,
-            "Content-Type": "application/json"
-          }
+            Authorization: `Bearer ${token}`,
+            "Content-Type": "application/json",
+          },
         });
 
         if (response.ok) {
@@ -25,11 +31,11 @@ const useGetData = (url, resource) => {
               dispatch(setServices(data));
             } else if (resource === "home") {
               dispatch(setHome(data));
-            }else if (resource === "blog") {
+            } else if (resource === "blog") {
               dispatch(setBlog(data));
-            }else if (resource === "members") {
+            } else if (resource === "members") {
               dispatch(setMembers(data));
-            }else if (resource === "categories") {
+            } else if (resource === "categories") {
               dispatch(setCategories(data));
             }
             setDataLoaded(true);

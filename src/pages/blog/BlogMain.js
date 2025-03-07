@@ -19,6 +19,8 @@ const BlogMain = () => {
   const [searchedData, setSearchedData] = useState([]); // Doar pentru rezultate căutare
   const [isSearching, setIsSearching] = useState(false);
 
+  const image = process.env.REACT_APP_API_URL_IMAGE;
+
   // Pagination state
   const [currentPage, setCurrentPage] = useState(1);
   const postsPerPage = 2;
@@ -120,7 +122,7 @@ const BlogMain = () => {
                             <div className="rc__post mb-20 d-flex" key={i}>
                               <div className="rc__post-thumb mr-20">
                                 <Link to={`/blog-details/${item.slug}`}>
-                                  <img src={`https://strapi.pingteam.ro${item.blogImage?.formats?.thumbnail?.url}`} alt="" />
+                                  <img src={`${image}${item.blogImage?.formats?.thumbnail?.url}`} alt="" />
                                 </Link>
                               </div>
                               <div className="rc__post-content">
@@ -155,7 +157,7 @@ const BlogMain = () => {
                     <article className="postbox__item format-image mb-50 transition-3" key={blog.id}>
                       <div className="postbox__thumb w-img">
                         <Link to={`/blog-details/${blog.slug}`}>
-                          <img src={`https://strapi.pingteam.ro${blog.blogImage?.url}`} alt="" />
+                          <img src={`${image}${blog.blogImage?.url}`} alt="" />
                         </Link>
                       </div>
                       <div className="postbox__content">

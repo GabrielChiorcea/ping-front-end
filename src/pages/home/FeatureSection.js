@@ -7,6 +7,7 @@ import { useSelector } from 'react-redux';
 const Feature = () => {
   const [featureimg, setFeatureimg] = useState([]);
   const homeData = useSelector((state) => state.data.home);
+  const image = process.env.REACT_APP_API_URL_IMAGE;
 
   useEffect(() => {
 
@@ -64,7 +65,7 @@ const Feature = () => {
           >
             <SingleFeature
               itemClass={`feature__item feature__color-${index + 1}  text-center`}
-              Image={`https://strapi.pingteam.ro${featureimg[index]?.featureItemImg.url}`}
+              Image={`${image}${featureimg[index]?.featureItemImg.url}`}
               Title={feature.featureItemTitle}
               Description={feature.featureItemDescription}
               btnText="See More"

@@ -1,17 +1,20 @@
-import "github-markdown-css"
-import React from 'react';
-import { Link, useParams } from 'react-router-dom';
-import { useSelector } from 'react-redux';
-import SocialFeed from '../../components/SocialFeed';
-import Breadcrumb from '../../components/Breadcrumb';
-import ReactMarkdown from 'react-markdown';
-import remarkGfm from 'remark-gfm';
-import aboutImg from '../../assets/img/about/about-1.jpg';
-import CTA from '../../components/CTA';
+import "github-markdown-css";
+import React from "react";
+import { useParams } from "react-router-dom";
+import { useSelector } from "react-redux";
+import SocialFeed from "../../components/SocialFeed";
+import Breadcrumb from "../../components/Breadcrumb";
+import ReactMarkdown from "react-markdown";
+import remarkGfm from "remark-gfm";
+import aboutImg from "../../assets/img/about/about-1.jpg";
+import CTA from "../../components/CTA";
 
 const HomeMain = () => {
-  const {slug} = useParams();
-  const member = useSelector(state => state.data.members.data.find(member => member.slug === slug));
+  const { slug } = useParams();
+  const member = useSelector((state) =>
+    state.data.members.data.find((member) => member.slug === slug)
+  );
+  const image = process.env.REACT_APP_API_URL_IMAGE;
 
   return (
     <main>
@@ -27,7 +30,11 @@ const HomeMain = () => {
                 data-wow-delay=".3s"
               >
                 <div className="about-5__main-img text-center text-lg-start">
-                    <img className='about-5__img' src={`https://strapi.pingteam.ro${member.profiePhoto.url}`} alt="" />
+                  <img
+                    className="about-5__img"
+                    src={`${image}${member.profiePhoto.url}`}
+                    alt=""
+                  />
                 </div>
               </div>
               <div className="col-xl-7 col-lg-7">
@@ -45,38 +52,36 @@ const HomeMain = () => {
                       data-wow-duration=".9s"
                       data-wow-delay=".6s"
                     >
-                      <p>
-                        {member.longDescription}
-                      </p>
+                      <p>{member.longDescription}</p>
                     </div>
                     <h6 className="section-title char-anim tpfadeUp">
-                     <i>The technologies I work with</i> 
-                  </h6>
+                      <i>The technologies I work with</i>
+                    </h6>
                     <div
                       className="about-5__content-list wow tpfadeUp"
                       data-wow-duration=".9s"
                       data-wow-delay=".7s"
                     >
                       <ul>
-                        {member.technologies.map(technology => (
+                        {member.technologies.map((technology) => (
                           <li key={technology.id}>
                             <i className="fal fa-check-circle"></i>
                             <span>{technology.technology}</span>
                           </li>
-                        ))}                                               
+                        ))}
                       </ul>
                     </div>
                   </div>
                 </div>
               </div>
               <div className="social__area social__plr-2 p-relative z-index">
-              <div className="container-fluid">
-                <SocialFeed 
-                linkedInlink={member.linkedIn}
-                githublink={member.gitHub}
-                />
+                <div className="container-fluid">
+                  <SocialFeed
+                    linkedInlink={member.linkedIn}
+                    githublink={member.gitHub}
+                  />
+                </div>
               </div>
-             </div>
             </div>
           </div>
         </div>
@@ -85,7 +90,6 @@ const HomeMain = () => {
       <div className="about-details__area about-details__plr">
         <div className="container-fluid">
           <div className="row align-items-center">
- 
             {/* <div
               className="col-xl-6 col-lg-6 wow tpfadeRight"
               data-wow-duration=".9s"
@@ -142,7 +146,7 @@ const HomeMain = () => {
               </div>
 
             </div> */}
-            
+
             {/* <div className="col-xl-12"
               <div
                 className="about-details__text-2 pt-50 wow tpfadeUp markdown-body"
@@ -152,13 +156,14 @@ const HomeMain = () => {
                 <ReactMarkdown remarkPlugins={[remarkGfm]}>{member.work}</ReactMarkdown>
               </div>
             </div> */}
-                              <div
-                                className="postbox__details-title-box pb-30 wow animate__fadeInUp markdown-body"
-                                data-wow-duration="1.1s"
-                              >
-                                <ReactMarkdown remarkPlugins={[remarkGfm]}>{member.work}</ReactMarkdown>
-                                
-                              </div>
+            <div
+              className="postbox__details-title-box pb-30 wow animate__fadeInUp markdown-body"
+              data-wow-duration="1.1s"
+            >
+              <ReactMarkdown remarkPlugins={[remarkGfm]}>
+                {member.work}
+              </ReactMarkdown>
+            </div>
           </div>
         </div>
       </div>
